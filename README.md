@@ -1,2 +1,45 @@
 # telegram-forworder
 Telegram Bot messege forworder for vercel. With call request management and time for check request using Environment Variables.
+
+Environment Variable code-
+# =============================================
+# TELEGRAM API CONFIGURATION
+# =============================================
+
+# Get these from https://my.telegram.org/apps
+API_ID=your_api_id_here
+API_HASH=your_api_hash_here
+
+# Your Telegram account details
+PHONE_NUMBER=+911234567890  # Your phone number with country code
+PASSWORD=your_2fa_password_if_any  # Leave empty if no 2FA
+
+# =============================================
+# TARGET CONFIGURATION
+# =============================================
+
+# Target group chat ID (get from @username_to_id_bot)
+TARGET_GROUP_CHAT_ID=-1001234567890
+
+# =============================================
+# SESSION CONFIGURATION
+# =============================================
+
+# Session storage (will be generated after first run)
+USER_STRING_SESSION=""
+STORE_SESSION_PATH="./sessions"
+
+# =============================================
+# OPERATIONAL SETTINGS
+# =============================================
+
+# Cron and Time Window Settings
+CHECK_INTERVAL_SECONDS=300      # 5 minutes in seconds
+ACTIVE_START_TIME="10:00"       # 24-hour format IST, when to start forwarding
+ACTIVE_END_TIME="24:00"         # 24-hour format IST, when to stop forwarding
+TIMEZONE="Asia/Kolkata"         # IST timezone
+
+# Message processing settings
+MAX_MESSAGES_PER_CHECK=10       # How many recent messages to check per run
+MESSAGE_LOOKBACK_MINUTES=15     # Only process messages from last X minutes
+DELAY_BETWEEN_FORWARDS_MS=1000  # Delay between forwarding messages
